@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+
+#  Author: AppleFairy
+#  Date: 8/11/2016
+#
+#
+# *************************************** #
 from __future__ import division
 from sklearn import metrics
 import math
@@ -14,7 +21,6 @@ class FMeasureClustering:
             print("The number of golden and predict label must be equal to each other")
             exit(1)
 
-    # if average=none, will return all the scores of each classes.
     # beta=1 by default(F1-measure) 
     def __GenerateDataSet(self, name , label):
         labels_new = []
@@ -27,7 +33,7 @@ class FMeasureClustering:
 
     def __CalculateNum (self, name):
         classNum = 0;
-        for elem in labels_golden:
+        for elem in self.__goldenLabels:
             if elem == name:
                 classNum = classNum + 1
         return classNum
@@ -59,8 +65,8 @@ class FMeasureClustering:
         maxPrecision = 0
         mappedClusterName = 0
         for clusterName in self.__clusterList:
-            y_true = self.__GenerateDataSet(className, labels_golden)
-            y_pred = self.__GenerateDataSet(clusterName, labels)
+            y_true = self.__GenerateDataSet(className, self.__goldenLabels)
+            y_pred = self.__GenerateDataSet(clusterName, self.__predLabels)
             f = self.__FMeasure(y_true, y_pred, eps)
 
             if f > maxPrecision:
