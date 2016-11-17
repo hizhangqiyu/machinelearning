@@ -51,6 +51,8 @@ filename = maybe_download('text8.zip', 31344016)
 def read_data(filename):
   """Extract the first file enclosed in a zip file as a list of words"""
   with zipfile.ZipFile(filename) as f:
+    # ZipFile.namelist(): Return a list of archive members by name
+    # data is a list of all the words
     data = tf.compat.as_str(f.read(f.namelist()[0])).split()
   return data
 
@@ -62,7 +64,7 @@ vocabulary_size = 50000
 
 def build_dataset(words):
   count = [['UNK', -1]]
-  count.extend(collections.Counter(words).most_common(vocabulary_size - 1))
+  count.extend(collections.Counter(words).most_common(vocabulary_size - 1)) # why -1?
   dictionary = dict()
   for word, _ in count:
     dictionary[word] = len(dictionary)
