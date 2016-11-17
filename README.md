@@ -12,3 +12,4 @@ Big picture
 ### Word2Vec
 [A Neural Probabilistic Language Model (Bengio)](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
 [Efficient Estimation of Word Representations in Vector Space (Mikolov)](https://arxiv.org/pdf/1301.3781.pdf)<br/>
+[Nice concise overview (Adrian Colyer)](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)<br/>
