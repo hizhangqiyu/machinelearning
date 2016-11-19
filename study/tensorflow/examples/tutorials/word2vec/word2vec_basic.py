@@ -134,9 +134,9 @@ valid_window = 100  # Only pick dev samples in the head of the distribution.
 valid_examples = np.random.choice(valid_window, valid_size, replace=False)
 num_sampled = 64    # Number of negative examples to sample.
 
-graph = tf.Graph()
+graph = tf.Graph() # a tensorflow computation, represented as a dataflow graph.
 
-with graph.as_default():
+with graph.as_default(): # return a context manager taht makes this Graph the default graph.
 
   # Input data.
   train_inputs = tf.placeholder(tf.int32, shape=[batch_size])
@@ -151,6 +151,7 @@ with graph.as_default():
     embed = tf.nn.embedding_lookup(embeddings, train_inputs)
 
     # Construct the variables for the NCE loss
+    # truncated_normal: outputs random values from a truncated normal distribution
     nce_weights = tf.Variable(
         tf.truncated_normal([vocabulary_size, embedding_size],
                             stddev=1.0 / math.sqrt(embedding_size)))

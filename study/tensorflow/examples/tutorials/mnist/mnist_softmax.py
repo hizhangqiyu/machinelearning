@@ -37,10 +37,10 @@ def main(_):
   mnist = input_data.read_data_sets(FLAGS.data_dir, one_hot=True)
 
   # Create the model
-  x = tf.placeholder(tf.float32, [None, 784])
-  W = tf.Variable(tf.zeros([784, 10]))
-  b = tf.Variable(tf.zeros([10]))
-  y = tf.matmul(x, W) + b
+  x = tf.placeholder(tf.float32, [None, 784]) # input
+  W = tf.Variable(tf.zeros([784, 10]))        # weight
+  b = tf.Variable(tf.zeros([10]))             # bias
+  y = tf.matmul(x, W) + b                     # formula
 
   # Define loss and optimizer
   y_ = tf.placeholder(tf.float32, [None, 10])
@@ -59,10 +59,10 @@ def main(_):
 
   sess = tf.InteractiveSession()
   # Train
-  tf.global_variables_initializer().run()
+  tf.global_variables_initializer().run()   # execute the op for variables initialization
   for _ in range(1000):
     batch_xs, batch_ys = mnist.train.next_batch(100)
-    sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+    sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})   # run all the ops fp/bp...
 
   # Test trained model
   correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
