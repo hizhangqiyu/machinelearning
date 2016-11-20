@@ -53,14 +53,17 @@ def inference(images, hidden1_units, hidden2_units):
   Returns:
     softmax_linear: Output tensor with the computed logits.
   """
+  # difference between name_scope and variable scope: http://stackoverflow.com/questions/35919020/whats-the-difference-of-name-scope-and-a-variable-scope-in-tensorflow
   # Hidden 1
   with tf.name_scope('hidden1'):
+    # truncateed_normal is used to generate random values.
     weights = tf.Variable(
         tf.truncated_normal([IMAGE_PIXELS, hidden1_units],
                             stddev=1.0 / math.sqrt(float(IMAGE_PIXELS))),
         name='weights')
     biases = tf.Variable(tf.zeros([hidden1_units]),
                          name='biases')
+    # tf.matmul(x,y) + c should be same to all the activate functions.
     hidden1 = tf.nn.relu(tf.matmul(images, weights) + biases)
   # Hidden 2
   with tf.name_scope('hidden2'):
