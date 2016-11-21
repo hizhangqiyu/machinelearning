@@ -81,6 +81,12 @@ def build_dataset(words):
   reverse_dictionary = dict(zip(dictionary.values(), dictionary.keys()))
   return data, count, dictionary, reverse_dictionary
 
+# For all the words whose frequence is higher than 50000.
+# All the index respect to the order sorted by frequence.
+# data:               [index]
+# count:              [[word, frequence]]
+# dictionary:         {word : index}
+# reverse_dictionary: {index : word}
 data, count, dictionary, reverse_dictionary = build_dataset(words)
 del words  # Hint to reduce memory.
 print('Most common words (+UNK)', count[:5])
@@ -90,27 +96,27 @@ data_index = 0
 
 
 # Step 3: Function to generate a training batch for the skip-gram model.
-def generate_batch(batch_size, num_skips, skip_window):
+def generate_batch(batch_size, num_skips, skip_window): # skip_window is length of left/right context
   global data_index
   assert batch_size % num_skips == 0
-  assert num_skips <= 2 * skip_window
-  batch = np.ndarray(shape=(batch_size), dtype=np.int32)
-  labels = np.ndarray(shape=(batch_size, 1), dtype=np.int32)
+  assert num_skips <= 2 * skip_window   # num_skips is the number of predict words.
+  batch = np.ndarray(shape=(batch_size), dtype=np.int32)      # input:  all the index selected from data
+  labels = np.ndarray(shape=(batch_size, 1), dtype=np.int32)  # input:  all the index
   span = 2 * skip_window + 1 # [ skip_window target skip_window ]
   buffer = collections.deque(maxlen=span)
   for _ in range(span):
-    buffer.append(data[data_index])
+    buffer.append(data[data_index])   # buffer size is equal to span
     data_index = (data_index + 1) % len(data)
-  for i in range(batch_size // num_skips):
+  for i in range(batch_size // num_skips): # '//' get integer.
     target = skip_window  # target label at the center of the buffer
     targets_to_avoid = [ skip_window ]
     for j in range(num_skips):
       while target in targets_to_avoid:
-        target = random.randint(0, span - 1)
+        target = random.randint(0, span - 1)  # [0, span-1], select one context word as target
       targets_to_avoid.append(target)
       batch[i * num_skips + j] = buffer[skip_window]
       labels[i * num_skips + j, 0] = buffer[target]
-    buffer.append(data[data_index])
+    buffer.append(data[data_index]) # slide window
     data_index = (data_index + 1) % len(data)
   return batch, labels
 
@@ -124,7 +130,7 @@ for i in range(8):
 batch_size = 128      # the word number of one batch
 embedding_size = 128  # Dimension of the embedding vector.
 skip_window = 1       # How many words to consider left and right.
-num_skips = 2         # How many times to reuse an input to generate a label. (the number of predict word for one target)
+num_skips = 2         # How many times to reuse an input to generate a label.
 
 # We pick a random validation set to sample nearest neighbors. Here we limit the
 # validation samples to the words that have a low numeric ID, which by
@@ -139,15 +145,16 @@ graph = tf.Graph() # a tensorflow computation, represented as a dataflow graph.
 with graph.as_default(): # return a context manager taht makes this Graph the default graph.
 
   # Input data.
-  train_inputs = tf.placeholder(tf.int32, shape=[batch_size])
-  train_labels = tf.placeholder(tf.int32, shape=[batch_size, 1])
-  valid_dataset = tf.constant(valid_examples, dtype=tf.int32)
+  train_inputs = tf.placeholder(tf.int32, shape=[batch_size])     # for input layer
+  train_labels = tf.placeholder(tf.int32, shape=[batch_size, 1])  # for loss computation
+  valid_dataset = tf.constant(valid_examples, dtype=tf.int32)     # for validation
 
   # Ops and variables pinned to the CPU because of missing GPU implementation
   with tf.device('/cpu:0'):
     # Look up embeddings for inputs.
     embeddings = tf.Variable(
-        tf.random_uniform([vocabulary_size, embedding_size], -1.0, 1.0))
+        tf.random_uniform([vocabulary_size, embedding_size], -1.0, 1.0))  # word vector(similar to weights for NN)
+    # map embeddings with train_inputs?
     embed = tf.nn.embedding_lookup(embeddings, train_inputs)
 
     # Construct the variables for the NCE loss
@@ -187,7 +194,7 @@ with tf.Session(graph=graph) as session:
   print("Initialized")
 
   average_loss = 0
-  for step in xrange(num_steps):
+  for step in xrange(num_steps): # [0,100001)
     batch_inputs, batch_labels = generate_batch(
         batch_size, num_skips, skip_window)
     feed_dict = {train_inputs : batch_inputs, train_labels : batch_labels}
