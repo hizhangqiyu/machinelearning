@@ -139,8 +139,8 @@ class Word2Vec(object):
   def __init__(self, options, session):
     self._options = options
     self._session = session
-    self._word2id = {}
-    self._id2word = []
+    self._word2id = {}   #{word:id}
+    self._id2word = []   #{id:word}
     self.build_graph()
     self.build_eval_graph()
     self.save_vocab()
@@ -159,7 +159,9 @@ class Word2Vec(object):
       for line in analogy_f:
         if line.startswith(b":"):  # Skip comments.
           continue
-        words = line.strip().lower().split(b" ")
+        # delete "\n" "\r" "\t" " " in the head and tail.
+        # return the list of low character of all the words.
+        words = line.strip().lower().split(b" ") 
         ids = [self._word2id.get(w.strip()) for w in words]
         if None in ids or len(ids) != 4:
           questions_skipped += 1
