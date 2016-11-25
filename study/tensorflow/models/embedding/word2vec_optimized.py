@@ -140,7 +140,7 @@ class Word2Vec(object):
     self._options = options
     self._session = session
     self._word2id = {}   #{word:id}
-    self._id2word = []   #{id:word}
+    self._id2word = []   #[word]
     self.build_graph()
     self.build_eval_graph()
     self.save_vocab()
