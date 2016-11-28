@@ -34,6 +34,9 @@ FLAGS = None
 
 
 def main(_):
+  # mnist.train 55000
+  # mnist.test  10000
+  # mnistl.validation 5000
   mnist = input_data.read_data_sets(FLAGS.data_dir, one_hot=True)
 
   # Create the model
