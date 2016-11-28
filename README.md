@@ -15,4 +15,4 @@ Big picture
 [Nice concise overview (Adrian Colyer)](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)<br/>
 
 ### MISC
-swing
+[swing](http://www.swig.org/Doc1.3/Python.html)<br/>
