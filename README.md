@@ -8,6 +8,12 @@ Big picture
 ### Reference
 [tensorflow]( https://www.tensorflow.org/)<br/>
 [sklearn](http://scikit-learn.org/stable/index.html)<br/>
+[MxNex](http://mxnet.io/index.html)<br/>
+
+### Tutorials
+[UFLDL](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)<br/>
+[DeepLearning](http://deeplearning.net/)<br/>
+[Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
 
 ### Word2Vec
 [A Neural Probabilistic Language Model (Bengio)](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
@@ -15,4 +21,4 @@ Big picture
 [Nice concise overview (Adrian Colyer)](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)<br/>
 
 ### MISC
-swing
+[swing](http://www.swig.org/Doc1.3/Python.html)<br/>

@@ -344,12 +344,15 @@ class Word2Vec(object):
     """Build the graph for the full model."""
     opts = self._options
     # The training data. A text file.
+    # The return values are tensor because skipgram is a custom op,
+    # so we need call run() to execute it.
     (words, counts, words_per_epoch, self._epoch, self._words, examples,
      labels) = word2vec.skipgram(filename=opts.train_data,
                                  batch_size=opts.batch_size,
                                  window_size=opts.window_size,
                                  min_count=opts.min_count,
                                  subsample=opts.subsample)
+    # the return value is numpy array, they always have the same structure.
     (opts.vocab_words, opts.vocab_counts,
      opts.words_per_epoch) = self._session.run([words, counts, words_per_epoch])
     opts.vocab_size = len(opts.vocab_words)
