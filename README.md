@@ -5,7 +5,7 @@ Big picture
 ------------------------------
 		This is a note book for ML study(coursera/kaggle/UFLDL...) and some toy programs.
 
-### Reference
+### Documents
 [tensorflow]( https://www.tensorflow.org/)<br/>
 [sklearn](http://scikit-learn.org/stable/index.html)<br/>
 [MxNex](http://mxnet.io/index.html)<br/>
@@ -14,6 +14,7 @@ Big picture
 [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)<br/>
 [DeepLearning](http://deeplearning.net/)<br/>
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
+[Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
 
 ### Word2Vec
 [A Neural Probabilistic Language Model (Bengio)](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
