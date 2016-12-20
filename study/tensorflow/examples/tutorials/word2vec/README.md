@@ -10,3 +10,5 @@ Big Picture
 		negative sampling
 		SGD
 		NCE loss
+### Basic Concepts
+lecture 4 in [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
