@@ -9,6 +9,9 @@ Big picture
 [tensorflow]( https://www.tensorflow.org/)<br/>
 [sklearn](http://scikit-learn.org/stable/index.html)<br/>
 [MxNex](http://mxnet.io/index.html)<br/>
+[Spark](http://spark.apache.org/docs/latest/programming-guide.html)<br/>
+[gensim](https://radimrehurek.com/gensim/)<br/>
+[NLTK](https://github.com/nltk/nltk/wiki)<br/>
 
 ### Tutorials
 [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)<br/>
