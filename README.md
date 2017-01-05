@@ -5,15 +5,15 @@ Big picture
 ------------------------------
 		This is a note book for ML study(coursera/kaggle/UFLDL...) and some toy programs.
 
-### Documents
-[tensorflow]( https://www.tensorflow.org/)<br/>
+### Reference
+[tensorflow](https://www.tensorflow.org/)<br/>
 [sklearn](http://scikit-learn.org/stable/index.html)<br/>
 [MxNex](http://mxnet.io/index.html)<br/>
 [Spark](http://spark.apache.org/docs/latest/programming-guide.html)<br/>
 [gensim](https://radimrehurek.com/gensim/)<br/>
 [NLTK](https://github.com/nltk/nltk/wiki)<br/>
 
-### Tutorials
+### Tutorial
 [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)<br/>
 [DeepLearning](http://deeplearning.net/)<br/>
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
