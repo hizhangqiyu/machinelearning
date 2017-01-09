@@ -19,10 +19,13 @@ Big picture
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
 [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
 
-### Word2Vec
+### NLP
+#### Word2Vec
 [A Neural Probabilistic Language Model (Bengio)](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
 [Efficient Estimation of Word Representations in Vector Space (Mikolov)](https://arxiv.org/pdf/1301.3781.pdf)<br/>
 [Nice concise overview (Adrian Colyer)](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)<br/>
+#### Doc2Vec
+[Distributed Representations of Sentences and Documents](https://arxiv.org/pdf/1405.4053v2.pdf)<br/>
 
 ### MISC
 [swing](http://www.swig.org/Doc1.3/Python.html)<br/>
