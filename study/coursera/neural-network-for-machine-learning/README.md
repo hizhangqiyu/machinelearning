@@ -5,6 +5,6 @@
 
 ## week6
     full-batch
-    mini-batch
+    mini-batch: better for large data set
     adaptive learning rate
     rporp
