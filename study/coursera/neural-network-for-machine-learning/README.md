@@ -1,4 +1,10 @@
 # neural-nettwork-for-machine-learning
-## lecture3:
+## week3
 
     update formula: w = w + (target - prediction) * x
+
+## week6
+    full-batch
+    mini-batch
+    adaptive learning rate
+    rporp
