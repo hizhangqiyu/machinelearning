@@ -4,7 +4,7 @@
     update formula: w = w + (target - prediction) * x
 
 ## week6
-    full-batch
+    full-batch
     mini-batch
     adaptive learning rate
     rporp
