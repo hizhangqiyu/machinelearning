@@ -21,11 +21,16 @@ Big picture
 
 ## NLP
 ### Word2Vec
-[A Neural Probabilistic Language Model (Bengio)](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
-[Efficient Estimation of Word Representations in Vector Space (Mikolov)](https://arxiv.org/pdf/1301.3781.pdf)<br/>
-[Nice concise overview (Adrian Colyer)](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)<br/>
+[A Neural Probabilistic Language Model](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
+[Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)<br/>
+[Nice concise overview](https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/)<br/>
+### WDM
+[From Word Embeddings To Document Distances](http://jmlr.org/proceedings/papers/v37/kusnerb15.pdf)<br/>
 ### Doc2Vec
 [Distributed Representations of Sentences and Documents](https://arxiv.org/pdf/1405.4053v2.pdf)<br/>
+
+## Tools
+[Visualizing Data using t-SNE](http://www.cs.toronto.edu/~hinton/absps/tsne.pdf)<br/>
 
 ## MISC
 [swing](http://www.swig.org/Doc1.3/Python.html)<br/>
