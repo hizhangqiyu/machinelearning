@@ -7,7 +7,7 @@ Big picture
 
 ## Reference
 [tensorflow](https://www.tensorflow.org/)<br/>
-[sklearn](http://scikit-learn.org/stable/index.html)<br/>
+[scikit-learn](http://scikit-learn.org/stable/index.html)<br/>
 [MxNet](http://mxnet.io/index.html)<br/>
 [Spark](http://spark.apache.org/docs/latest/programming-guide.html)<br/>
 [gensim](https://radimrehurek.com/gensim/)<br/>
