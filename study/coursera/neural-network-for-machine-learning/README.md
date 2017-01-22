@@ -1,7 +1,8 @@
 # neural-nettwork-for-machine-learning
 ## week3
 
-    formula: w = w + (target - prediction) * x
+    formula: 
+        w = w + (target - prediction) * x
 
 ## week6
 
