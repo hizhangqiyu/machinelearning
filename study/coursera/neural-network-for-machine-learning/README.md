@@ -1,4 +1,4 @@
-# neural-nettwork-for-machine-learning
+# neural-network-for-machine-learning
 ## week3
 
     formula: 
