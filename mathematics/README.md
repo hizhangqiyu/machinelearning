@@ -1,4 +1,4 @@
-Mathmatics
+Mathematics
 ===============================
 
 ## Gussion function
