@@ -81,17 +81,18 @@ class FMeasureClustering:
         for element in self.__classList:
             print("F-measure result{}:".format(element))
             f, n = self.__Mapping(element, eps)
-            result = result + f * self.__goldenLabels.count(n)
+            result = result + f * self.__goldenLabels.count(element)
         return result/len(self.__goldenLabels)
 
-labels_golden = [0,0,0,0,1,2,2,2,1,3]
-labels = [0,0,0,0,2,1,1,1,3,4]
-
-print("AMI result:")
-print metrics.adjusted_mutual_info_score(labels_golden, labels)
-
-print("V-measure result:")
-print metrics.v_measure_score(labels_golden, labels)
-
-fmeasure = FMeasureClustering(labels_golden, labels)
-print fmeasure.GetFMeasure()
+if __name__ == "__main__":
+    labels_golden = [0,0,0,0,1,2,2,2,1,3]
+    labels = [0,0,0,0,2,1,1,1,3,4]
+    
+    print("AMI result:")
+    print metrics.adjusted_mutual_info_score(labels_golden, labels)
+    
+    print("V-measure result:")
+    print metrics.v_measure_score(labels_golden, labels)
+    
+    fmeasure = FMeasureClustering(labels_golden, labels)
+    print fmeasure.GetFMeasure()
