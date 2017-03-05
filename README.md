@@ -5,7 +5,7 @@ Big picture
 ------------------------------
 		This is a note book for ML study(coursera/kaggle/UFLDL...) and some toy programs.
 
-## Reference
+## Framework Study
 [tensorflow](https://www.tensorflow.org/)<br/>
 [scikit-learn](http://scikit-learn.org/stable/index.html)<br/>
 [MxNet](http://mxnet.io/index.html)<br/>
@@ -13,7 +13,7 @@ Big picture
 [gensim](https://radimrehurek.com/gensim/)<br/>
 [NLTK](https://github.com/nltk/nltk/wiki)<br/>
 
-## Tutorial
+## Course
 [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)<br/>
 [DeepLearning](http://deeplearning.net/)<br/>
 [self driving](http://selfdrivingcars.mit.edu/)<br/>
@@ -34,8 +34,8 @@ Big picture
 [Generative Adversarial Nets](http://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf)<br/>
 [DRAW: A Recurrent Neural Network For Image Generation](https://arxiv.org/pdf/1502.04623.pdf)<br/>
 
-## Tools
+## Tool
 [Visualizing Data using t-SNE](http://www.cs.toronto.edu/~hinton/absps/tsne.pdf)<br/>
 
-## MISC
+## Other
 [swing](http://www.swig.org/Doc1.3/Python.html)<br/>
