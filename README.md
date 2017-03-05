@@ -30,7 +30,7 @@ Big picture
 ### Doc2Vec
 [Distributed Representations of Sentences and Documents](https://arxiv.org/pdf/1405.4053v2.pdf)<br/>
 
-## Multi Model Deep Learning Paper Portal
+## Generative Modeling Paper Portal
 [Generative Adversarial Nets](http://papers.nips.cc/paper/5423-generative-adversarial-nets.pdf)<br/>
 [DRAW: A Recurrent Neural Network For Image Generation](https://arxiv.org/pdf/1502.04623.pdf)<br/>
 
