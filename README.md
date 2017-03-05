@@ -10,7 +10,7 @@ Big picture
 * [Course](#Course)
 * [Paper Portal](#Paper Portal)
     * [NLP](#NLP)
-    * [Generative Modeling](#Generative Modeling)
+    * [Generative Modeling](#Generative Modeling)
 * [Tool](#Tool)
 * [Other](#Other)
 
