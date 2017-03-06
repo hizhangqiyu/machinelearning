@@ -9,6 +9,7 @@ Big picture
 * [Framework Study](#Framework Study)
 * [Course](#Course)
 * [Paper Portal](#Paper Portal)
+    * [Common](#Common)
     * [NLP](#NLP)
     * [Generative Modeling](#Generative Modeling)
 * [Tool](#Tool)
@@ -30,6 +31,8 @@ Big picture
 [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
 
 ## Paper Portal
+### Common
+droup out [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)<br/>
 ### NLP
 [A Neural Probabilistic Language Model](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
 Word2Vec [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)<br/>
