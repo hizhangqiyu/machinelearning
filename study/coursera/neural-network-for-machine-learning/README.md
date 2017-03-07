@@ -33,3 +33,7 @@ def Caculate(Wxh, Whh, Why, hBias, yBias, x0, x1, x2, t0, t1, t2):
 
     E = E0 + E1 + E2
 ```
+## week10
+    
+    key words:
+        dropout
