@@ -40,7 +40,7 @@
 [Unsupervised representation learning with deep convolutional generative adversarial networks](https://arxiv.org/pdf/1511.06434v2.pdf)<br/>
 [DRAW: A Recurrent Neural Network For Image Generation](https://arxiv.org/pdf/1502.04623.pdf)<br/>
 
-### AGI
+### AGI ([Artificial General Intelligence](https://intelligence.org/2013/08/11/what-is-agi/))
 [Asynchronous Methods for Deep Reinforcement Learning](https://arxiv.org/pdf/1602.01783.pdf)<br/>
 [PathNet: Evolution Channels Gradient Descent in Super Neural Networks](https://arxiv.org/pdf/1701.08734v1.pdf)<br/>
 
