@@ -2,13 +2,13 @@
 ## Content
 * [Framework](#framework)
 * [Course](#course)
-* [Paper Portal](#Paper Portal)
-  * [Common](#Common)
-  * [NLP](#NLP)
-  * [Generative Modeling](#Generative Modeling)
-  * [AGI](#AGI)
-* [Tool](#Tool)
-* [Other](#Other)
+* [Paper Portal](#paper portal)
+  * [Common](#common)
+  * [NLP](#nlp)
+  * [Generative Modeling](#generative modeling)
+  * [AGI](#agi (artificial general intelligence))
+* [Tool](#tool)
+* [Other](#other)
 
 Framework
 ----------------
