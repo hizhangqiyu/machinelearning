@@ -2,11 +2,11 @@
 ## Content
 * [Framework](#framework)
 * [Course](#course)
-* [Paper Portal](#paper portal)
+* [Paper Portal](#paper)
   * [Common](#common)
   * [NLP](#nlp)
-  * [Generative Modeling](#generative modeling)
-  * [AGI](#agi (artificial general intelligence))
+  * [Generative Modeling](#generative)
+  * [AGI](#agi)
 * [Tool](#tool)
 * [Other](#other)
 
@@ -31,6 +31,7 @@ Paper Portal
 ----------------
 ### Common
 [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)<br/>
+[Hopfiled](http://www.comp.leeds.ac.uk/ai23/reading/Hopfield.pdf)<br/>
 ### NLP
 [A Neural Probabilistic Language Model](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
 [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)<br/>
