@@ -11,27 +11,21 @@ nvidia-docker
     3. NVIDIA GPU with Architecture > Fermi (2.1)
     4. NVIDIA drivers >= 340.29 with binary nvidia-modprobe
 
-### Install Nvidia drivers
+### Install Nvidia Drivers
     download *.run file from http://www.nvidia.com/object/unix.html
     execute this file.
 
     sudo apt-get install nvidia-current-updates
 
-## Install
-    wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
+## Install Nvidia Docker
+    wget -P /tmp https://github.com/NVIDIA/nvidia-docker/releases/download/v1.0.1/nvidia-docker_1.0.1-1_amd64.deb
     sudo dpkg -i /tmp/nvidia-docker*.deb && rm /tmp/nvidia-docker*.deb
 
 ## Test
     nvidia-docker run --rm nvidia/cuda nvidia-smi
 
-
-command
+Command
 -----------------------------
-## dgx
-    dgx job submit -f <json file>
-    dgx job list -m
-    dgx job log -e <job id>
-    dgx job get <job id>
 
 ## docker
     docker run -it <docker image> <command>
