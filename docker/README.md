@@ -24,7 +24,7 @@ nvidia-docker
 ### Test
     nvidia-docker run --rm nvidia/cuda nvidia-smi
 
-tensorflow docker
+tensorflow docker image
 ----------------------------
 cpu only
 
