@@ -36,7 +36,7 @@ nvidia gpu enabled
 
 add below command into Dockerfile and rebuild the image if lacking libcupti-dev.
 
-    ENV PATH=$PATH:/usr/local/cuda-8.0/extras/CUPTI/lib64/
+    ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/extras/CUPTI/lib64/
 
 [more details](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md)
 
