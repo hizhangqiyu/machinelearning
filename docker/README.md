@@ -49,3 +49,5 @@ Command
     docker build -t <image> .
     docker login
     docker tag <source image> <dest image>:<tag>
+    
+[more details](https://docs.docker.com/learn/)
