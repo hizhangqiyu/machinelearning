@@ -2,8 +2,9 @@
 ## Content
 * [Framework](#framework)
 * [Course](#course)
-* [Paper Portal](#paper)
+* [Portal](#portal)
   * [Common](#common)
+  * [CNN](#cnn)
   * [NLP](#nlp)
   * [Generative Modeling](#generative)
   * [AGI](#agi)
@@ -27,11 +28,15 @@ Course
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
 [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
 
-Paper Portal
+Portal
 ----------------
 ### Common
 [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)<br/>
 [Hopfiled](http://www.comp.leeds.ac.uk/ai23/reading/Hopfield.pdf)<br/>
+
+### CNN
+[Convolutional Neural Networks (LeNet)](http://deeplearning.net/tutorial/lenet.html)<br/>
+
 ### NLP
 [A Neural Probabilistic Language Model](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
 [Efficient Estimation of Word Representations in Vector Space](https://arxiv.org/pdf/1301.3781.pdf)<br/>
