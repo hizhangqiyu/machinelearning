@@ -32,6 +32,7 @@ Portal
 ----------------
 ### Common
 [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)<br/>
+[Batch Normalization](https://arxiv.org/pdf/1502.03167.pdf)<br/>
 [Hopfiled](http://www.comp.leeds.ac.uk/ai23/reading/Hopfield.pdf)<br/>
 
 ### CNN
