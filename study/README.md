@@ -4,7 +4,7 @@
 * [Course](#course)
 * [Portal](#portal)
   * [Common](#common)
-  * [CNN](#cnn)
+  * [CNN/DNN](#cnn/dnn)
   * [NLP](#nlp)
   * [Generative Modeling](#generative)
   * [AGI](#agi)
@@ -28,15 +28,17 @@ Course
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
 [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
 
-Portal
+Reference
 ----------------
 ### Common
 [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)<br/>
 [Batch Normalization](https://arxiv.org/pdf/1502.03167.pdf)<br/>
 [Hopfiled](http://www.comp.leeds.ac.uk/ai23/reading/Hopfield.pdf)<br/>
 
-### CNN
+### CNN/DNN
 [Convolutional Neural Networks (LeNet)](http://deeplearning.net/tutorial/lenet.html)<br/>
+[ImageNet Classification with Deep Convolutional Neural Networks](http://www.cs.toronto.edu/~fritz/absps/imagenet.pdf)<br/>
+[Going deeper with convolutions](https://arxiv.org/pdf/1409.4842.pdf)<br/>
 
 ### NLP
 [A Neural Probabilistic Language Model](http://jmlr.org/papers/volume3/bengio03a/bengio03a.pdf)<br/>
