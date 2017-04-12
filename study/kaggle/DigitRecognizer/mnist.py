@@ -21,12 +21,12 @@ LR = 0.001 # Learning rate
 
 data = pd.read_csv('train.csv') # Read csv file in pandas dataframe
 labels = np.array(data.pop('label')) # Remove the labels as a numpy array from the dataframe
-labels = LabelEncoder().fit_transform(labels)[:, None]
-labels = OneHotEncoder().fit_transform(labels).todense()
+labels = LabelEncoder().fit_transform(labels)[:, None] # [:,None] eg. ([1,2,3]) => ([1],[2],[3])
+labels = OneHotEncoder().fit_transform(labels).todense() # todense/toarray
 data = StandardScaler().fit_transform(np.float32(data.values)) # Convert the dataframe to a numpy array
-data = data.reshape(-1, WIDTH, WIDTH, CHANNELS) # Reshape the data into 42000 2d images
+data = data.reshape(-1, WIDTH, WIDTH, CHANNELS) # Reshape the data into 42000 2d images 42000x28x28x1
 train_data, valid_data = data[:-VALID], data[-VALID:]
-train_labels, valid_labels = labels[:-VALID], labels[-VALID:]
+train_labels, valid_labels = labels[:-VALID], labels[-VALID:] # [0,1000) []
 
 print('train data shape = ' + str(train_data.shape) + ' = (TRAIN, WIDTH, WIDTH, CHANNELS)')
 print('labels shape = ' + str(labels.shape) + ' = (TRAIN, LABELS)')
