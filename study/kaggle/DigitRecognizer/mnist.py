@@ -24,7 +24,7 @@ labels = np.array(data.pop('label')) # Remove the labels as a numpy array from t
 labels = LabelEncoder().fit_transform(labels)[:, None] # [:,None] eg. ([1,2,3]) => ([1],[2],[3])
 labels = OneHotEncoder().fit_transform(labels).todense() # todense/toarray
 data = StandardScaler().fit_transform(np.float32(data.values)) # Convert the dataframe to a numpy array
-data = data.reshape(-1, WIDTH, WIDTH, CHANNELS) # Reshape the data into 42000 2d images 42000x28x28x1
+data = data.reshape(-1, WIDTH, WIDTH, CHANNELS) # Reshape the data into 42000 2d images 42000x28x28x1, -1 means decided by data.
 train_data, valid_data = data[:-VALID], data[-VALID:]
 train_labels, valid_labels = labels[:-VALID], labels[-VALID:] # [0,1000) []
 
@@ -74,7 +74,7 @@ init = tf.global_variables_initializer()
 session = tf.Session()
 session.run(init)
 
-ss = ShuffleSplit(n_splits=STEPS, train_size=BATCH)
+ss = ShuffleSplit(n_splits=STEPS, train_size=BATCH) # n_splitts, test_size, train_size, random_size
 ss.get_n_splits(train_data, train_labels)
 history = [(0, np.nan, 10)] # Initial Error Measures
 for step, (idx, _) in enumerate(ss.split(train_data,train_labels), start=1):
