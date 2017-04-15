@@ -1,5 +1,6 @@
 MachineLearning
 ===============================
+	DARPA: "rich, complex and subtle information within an environment to create new meanings to plan and to decide -- preceive learn abstract reason"
 
 Big picture
 ------------------------------
