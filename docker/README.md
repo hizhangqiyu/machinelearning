@@ -49,7 +49,9 @@ Command
     docker images
     docker build -t <image> .
     docker login
-    docker tag <source image> <dest image>:<tag>
+    docker tag <source image> <dest image>:<tag>
+    
 ### DockerFile command
     https://docs.docker.com/engine/reference/builder/
+    
 [more details](https://docs.docker.com/learn/)
