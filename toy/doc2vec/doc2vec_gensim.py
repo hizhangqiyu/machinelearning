@@ -26,7 +26,8 @@ def get_doc_list():
     doc_list = []
     for fname in doc_list:#os.listdir(corpus_dir):
         doc_list.append(fname)
-    return shuffle(doc_list)
+    shuffle(doc_list)
+    return doc_list
 
 def read_corpus(doc_list, tokens_only=False):
     """Tag all docs, one doc coresspands to one TaggedDocument object."""
@@ -55,8 +56,8 @@ def evaluate(train_corpus, model):
 
 def main():
     doc_list = get_doc_list()
-    train_corpus = list(read_corpus(random.sample(doc_list, TRAIN_DOC_NUM)))
-    test_corpus = list(read_corpus(random.sample(doc_list, len(log_lsit) - TRAIN_DOC_NUM), true)
+    train_corpus = read_corpus(doc_list[:-TRAIN_DOC_NUM])
+    test_corpus = read_corpus(doc_list[-TRAIN_DOC_NUM:] true)
 
     print("Get train corpus generator successfully.")
 
