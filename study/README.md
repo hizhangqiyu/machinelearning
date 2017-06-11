@@ -24,6 +24,7 @@ Course
 ----------------
 [UFLDL](http://deeplearning.stanford.edu/wiki/index.php/UFLDL_Tutorial)<br/>
 [DeepLearning](http://deeplearning.net/)<br/>
+[DeepLearningBook](https://www.deeplearningbook.org/front_matter.pdf)<br/>
 [self driving](http://selfdrivingcars.mit.edu/)<br/>
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
 [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
