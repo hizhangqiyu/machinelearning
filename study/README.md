@@ -3,6 +3,7 @@
 * [Framework](#framework)
 * [Course](#course)
 * [Portal](#portal)
+  * [Status](#status)
   * [Common](#common)
   * [CNN/DNN](#cnn/dnn)
   * [NLP](#nlp)
@@ -31,9 +32,11 @@ Course
 
 Reference
 ----------------
-### Common
+### Status
 [A Roadmap towards Machine Intelligence](https://arxiv.org/abs/1511.08130)<br/>
 [Measuring the Progress of AI Research](https://www.eff.org/ai/metrics)<br/>
+
+### Common
 [Dropout: A Simple Way to Prevent Neural Networks from Overfitting](http://jmlr.org/papers/volume15/srivastava14a/srivastava14a.pdf)<br/>
 [Batch Normalization](https://arxiv.org/pdf/1502.03167.pdf)<br/>
 [Hopfiled](http://www.comp.leeds.ac.uk/ai23/reading/Hopfield.pdf)<br/>
