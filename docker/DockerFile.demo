@@ -1,0 +1,39 @@
+FROM ubuntu:14.04
+
+RUN apt-get update && apt-get install -y \
+    python-bs4 \
+    python-numpy \
+    libopenblas-dev \
+    libblas-dev \
+    liblapack-dev \
+    gfortran \
+#    python-scipy \
+    python-matplotlib \
+    ipython \
+    ipython-notebook \
+    python-pandas \
+    python-sympy \
+    python-nose \
+    python-pip \
+    python-enchant \
+    python-dev \
+    vim
+
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LC_CTYPE en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
+RUN pip install -U numpy scipy scikit-learn nltk
+
+RUN easy_install --upgrade gensim
+
+#RUN mkdir /storage
+#WORKDIR /storage
+
+#RUN touch ~/.bashrc
+#RUN echo "alias ls='ls --color=auto" >> ~/.bashrc
+#RUN touch ~/.vimrc
+#RUN echo "set nu set ts=4 set sw=4 set expandtab if &diff colorscheme evening endif highlight Comment ctermfg=6" >> ~/.vimrc
+
+CMD ["bash"]
