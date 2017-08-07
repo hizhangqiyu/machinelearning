@@ -5,94 +5,65 @@
 #
 #
 # *************************************** #
+
 from __future__ import division
-from sklearn import metrics
+import pandas as pd
 import math
 
-class FMeasureClustering:
+class FMeasure:
+    '''
+        p : precision
+        r : recall
+        f : f measure
+        
+        tp: true positive
+        fp: false positive
+        fn: false negetive
+        tn: true negetive
+        
+        p = tp / (tp + fp)
+        r = tp / (tp + fn)
+        f = (e^2 + 1) * (p * r) / (e^2 * p + r)
+    '''
+    def __init__(self, golden_vs_predict_result):
+        self.__classIdList = set(golden_vs_predict_result.loc[:, "ClassId"].tolist())
+        self.__clusterIdList = set(golden_vs_predict_result.loc[:, "ClusterId"].tolist())
+        self.__gvpr = golden_vs_predict_result
 
-    def __init__ (self, goldenLabels, predLabels):
-        if len(goldenLabels) == len(predLabels):
-            self.__classList = set(goldenLabels)
-            self.__clusterList = set(predLabels)
-            self.__goldenLabels = goldenLabels
-            self.__predLabels = predLabels
-        else:
-            print("The number of golden and predict label must be equal to each other")
-            exit(1)
 
-    # beta=1 by default(F1-measure) 
-    def __GenerateDataSet(self, name , label):
-        labels_new = []
-        for element in label:
-            if element != name:
-                labels_new.append(0)
-            else:
-                labels_new.append(1)
-        return labels_new
+    def __calculate(self, classId, clusterId, eps):
+        truePositive = len(self.__gvpr.loc[(self.__gvpr.ClassId == classId) & (self.__gvpr.ClusterId == clusterId)])
+        precision = truePositive/len(self.__gvpr[self.__gvpr.ClusterId == clusterId])
+        recall = truePositive/len(self.__gvpr[self.__gvpr.ClassId == classId])
 
-    def __CalculateNum (self, name):
-        classNum = 0;
-        for elem in self.__goldenLabels:
-            if elem == name:
-                classNum = classNum + 1
-        return classNum
-
-    def __TruePositive(self, y_true, y_pred):
-        tp = 0
-        for idx in range(len(y_true)):
-            if y_true[idx] == y_pred[idx] and y_true[idx] == 1:
-                tp = tp +1
-        return tp
-
-    def __Precision(self, y_true, y_pred):
-        tp = self.__TruePositive(y_true, y_pred)
-        return tp/y_pred.count(1)
-
-    def __Recall(self, y_true, y_pred):
-        tp = self.__TruePositive(y_true, y_pred)
-        return tp/y_true.count(1)
-
-    def __FMeasure(self, y_true, y_pred, eps):
-        precision = self.__Precision(y_true, y_pred)
-        recall = self.__Recall(y_true, y_pred)
         if 0 == precision and 0 == recall:
             return 0
         else:
             return (math.pow(eps,2) +1)*(precision*recall)/(math.pow(eps,2)*precision+recall)
 
-    def __Mapping(self, className, eps):
+    def __mapping(self, classId, eps):
         maxPrecision = 0
-        mappedClusterName = 0
-        for clusterName in self.__clusterList:
-            y_true = self.__GenerateDataSet(className, self.__goldenLabels)
-            y_pred = self.__GenerateDataSet(clusterName, self.__predLabels)
-            f = self.__FMeasure(y_true, y_pred, eps)
+        mappedClusterId = -1
+        for clusterId in self.__clusterIdList:
+            if(clusterId != -1):
+                f = self.__calculate(classId, clusterId, eps)
 
-            if f > maxPrecision:
-                maxPrecision = f
-                mappedClusterName = clusterName
+                if f > maxPrecision:
+                    maxPrecision = f
+                    mappedClusterId = clusterId
 
-        print("map %d => %d" % (className, mappedClusterName))
-        return [maxPrecision, mappedClusterName]
+        print(" class <==> cluster : %r <==> %r, precision=%f" % (classId, mappedClusterId, maxPrecision))
+        return maxPrecision
 
-    def GetFMeasure(self, eps=1):
+    def get_fmeasure(self, eps=1):
         result = 0
-        for element in self.__classList:
-            print("F-measure result{}:".format(element))
-            f, n = self.__Mapping(element, eps)
-            result = result + f * self.__goldenLabels.count(element)
-        return result/len(self.__goldenLabels)
+        for classId in self.__classIdList:
+            f = self.__mapping(classId, eps)
+            result = result + f * len(self.__gvpr[self.__gvpr.ClassId == classId])
+
+        return result/len(self.__gvpr)
+
 
 if __name__ == "__main__":
-    labels_golden = [0,0,0,0,1,2,2,2,1,3]
-    labels = [0,0,0,0,2,1,1,1,3,4]
-    
-    print("AMI result:")
-    print metrics.adjusted_mutual_info_score(labels_golden, labels)
-    
-    print("V-measure result:")
-    print metrics.v_measure_score(labels_golden, labels)
-    
-    fmeasure = FMeasureClustering(labels_golden, labels)
-    print fmeasure.GetFMeasure()
+    result = FMeasure([1,1,0,0,1,2],[0,0,1,1,0,2])
+    print(result.get_fmeasure())
