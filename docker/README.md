@@ -30,15 +30,20 @@ cpu only
 
     docker pull gcr.io/tensorflow/tensorflow
 
-nvidia gpu enabled
+nvidia gpu
 
     docker pull gcr.io/tensorflow/tensorflow:latest-gpu
+    
+nvidia gpu develop
+
+    docker pull gcr.io/tensorflow/tensorflow:latest-devel-gpu
 
 add below command into Dockerfile and rebuild the image if lacking libcupti-dev.
 
     ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/extras/CUPTI/lib64/
 
-[more details](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md)
+[tensorflow readme](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md)
+[tensorflow Dockerfile](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/docker)
 
 Command
 -----------------------------
