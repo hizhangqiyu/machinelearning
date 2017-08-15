@@ -42,7 +42,7 @@ add below command into Dockerfile and rebuild the image if lacking libcupti-dev.
 
     ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-8.0/extras/CUPTI/lib64/
 
-[tensorflow readme](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md)
+[tensorflow readme](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/tools/docker/README.md)(/br)
 [tensorflow Dockerfile](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/docker)
 
 Command
@@ -59,4 +59,4 @@ Command
 ### DockerFile command
     https://docs.docker.com/engine/reference/builder/
     
-[more details](https://docs.docker.com/learn/)
+[Docker user guide](https://docs.docker.com/learn/)
