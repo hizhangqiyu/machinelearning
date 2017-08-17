@@ -29,6 +29,7 @@ Course
 [self driving](http://selfdrivingcars.mit.edu/)<br/>
 [Andrew's ML course in Coursera](https://www.coursera.org/learn/machine-learning/home/welcome)<br/>
 [Neural Networks for Machine Learning](https://www.coursera.org/learn/neural-networks/home/welcome)<br/>
+[Tensorflow for deep learning reserach](http://web.stanford.edu/class/cs20si/syllabus.html?utm_source=Mailing+list&utm_campaign=c795fe706f-Kaggle_Newsletter_06-06-2017&utm_medium=email&utm_term=0_f42f9df1e1-c795fe706f-400541889)<br/>
 
 Reference
 ----------------
