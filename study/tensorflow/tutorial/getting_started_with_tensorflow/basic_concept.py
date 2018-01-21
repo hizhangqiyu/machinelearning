@@ -20,7 +20,7 @@ loss = tf.reduce_sum(tf.square(linear_model - y))
 optimizer = tf.train.GradientDescentOptimizer(0.01)
 train = optimizer.minimize(loss)
 
-# training data
+# Training data
 x_train = [1, 2, 3, 4]
 y_train = [0, -1, -2, -3]
 
@@ -29,7 +29,7 @@ y_train = [0, -1, -2, -3]
 # Running the computational graph
 ##################################
 
-# training loop
+# Training loop
 init = tf.global_variables_initializer()
 sess = tf.Session()
 sess.run(init)
