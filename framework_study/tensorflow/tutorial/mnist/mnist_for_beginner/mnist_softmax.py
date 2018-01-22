@@ -4,7 +4,7 @@ import os
 import tempfile
 from tensorflow.contrib.learn.python.learn.datasets.mnist import read_data_sets
 
-mnist = read_data_sets('../../../../datasets', one_hot=True)
+mnist = read_data_sets('../../../../datasets/mnist', one_hot=True)
 
 # features
 x = tf.placeholder(tf.float32, [None, 784])
