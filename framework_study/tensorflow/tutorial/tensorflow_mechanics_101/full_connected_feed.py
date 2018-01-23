@@ -3,8 +3,10 @@ import gzip
 import os
 import tempfile
 import time
+import sys
+import argparse
 from tensorflow.contrib.learn.python.learn.datasets.mnist import read_data_sets
-from tensorflow_mechanics_101 import mnist
+import mnist
 
 FLAGS = None
 
@@ -14,8 +16,8 @@ def placeholder_inputs(batch_size):
     return images_palceholder, labels_placeholder
 
 def fill_feed_dict(data_set, images_pl, labels_pl):
-    batch = data_set.next_batch(FALGS.batch_size, FALGS.fake_data)
-    feed_dict = {images_pl: batch[0], labels_pl: batch[1]}
+    images_feed, labels_feed = data_set.next_batch(FLAGS.batch_size, FLAGS.fake_data)
+    feed_dict = {images_pl: images_feed, labels_pl: labels_feed}
     return feed_dict
 
 def do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_set):
@@ -25,26 +27,26 @@ def do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_set
 
     for step in range(steps_per_epoch):
         feed_dict = fill_feed_dict(data_set, images_palceholder, labels_placeholder)
-        true_count = sess.run(eval_correct, feed_dict=feed_dict)
+        true_count += sess.run(eval_correct, feed_dict=feed_dict)
 
     precision = float(true_count) / num_examples
-    print('Num examples: %d Num correct: %d Precision @ 1: %0.04f' % (num_examples, true_count, precision))
+    print('Num examples: %d Num correct: %d Precision: %0.04f' % (num_examples, true_count, precision))
 
 def run_trainning():
-    data_sets = read_data_sets('../../../../datasets/mnist', FLAGS.fake_data)
+    data_sets = read_data_sets('../../../dataset/mnist', FLAGS.fake_data)
 
-    with tf.Graph.as_default():
+    with tf.Graph().as_default():
         images_palceholder, labels_placeholder = placeholder_inputs(FLAGS.batch_size)
         logits = mnist.inference(images_palceholder, FLAGS.hidden1, FLAGS.hidden2)
         loss = mnist.loss(logits, labels_placeholder)
-        train_op = mnist.train_op(loss, FLAGS.learning_rate)
+        train_op = mnist.training(loss, FLAGS.learning_rate)
         eval_correct = mnist.evaluation(logits, labels_placeholder)
         
         summary = tf.summary.merge_all()
         init = tf.global_variables_initializer()
         saver = tf.train.Saver()
         sess = tf.Session()
-        summary_writer = tf.summary.FileWriter('../../../../datasets/tensorboard', sess.graph)
+        summary_writer = tf.summary.FileWriter('../../../dataset/tensorboard', sess.graph)
 
         sess.run(init)
 
@@ -63,17 +65,17 @@ def run_trainning():
                 summary_writer.flush()
 
             if (step + 1) % 1000 == 0 or (step + 1) == FLAGS.max_steps:
-                checkpoint_file = '../../../../datasets/tensorboard/model.ckpt'
+                checkpoint_file = '../../../dataset/tensorboard/model.ckpt'
                 saver.save(sess, checkpoint_file, global_step=step)
                 
                 print('Training Data Eval:')
                 do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_sets.train)
                 
                 print('Validation Data Eval:')
-                do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_set.validation)
+                do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_sets.validation)
                 
                 print('Test Data Eval:')
-                do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_set.test)
+                do_eval(sess, eval_correct, images_palceholder, labels_placeholder, data_sets.test)
 
 def main(_):
     run_trainning()
